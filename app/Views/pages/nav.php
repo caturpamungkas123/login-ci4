@@ -31,6 +31,8 @@
           </div>
 
           <!-- Nav Item - Pages Collapse Menu -->
+          <!-- nav admin -->
+          <?php if(in_groups('admin')) : ?>
           <li class="nav-item">
               <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                   <i class="fas fa-users"></i>
@@ -42,7 +44,19 @@
                   </div>
               </div>
           </li>
-
+          <li class="nav-item">
+              <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#list" aria-expanded="true" aria-controls="collapseTwo">
+                  <i class="fas fa-users"></i>
+                  <span>List Users</span>
+              </a>
+              <div id="list" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                  <div class="bg-white py-2 collapse-inner rounded">
+                      <a class="collapse-item" href="<?php echo base_url() ?>/admin/admin/users">List Users</a>
+                  </div>
+              </div>
+          </li>
+          <?php endif; ?>
+<!-- end nav admin -->
           <!-- Nav Item - Utilities Collapse Menu -->
           <li class="nav-item">
               <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
@@ -124,8 +138,8 @@
                       <!-- Nav Item - User Information -->
                       <li class="nav-item dropdown no-arrow">
                           <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                              <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                              <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo user()->username ?></span>
+                              <img class="img-profile rounded-circle" src="<?php echo base_url() ?>/img/<?php echo user()->gambar ?>">
                           </a>
                           <!-- Dropdown - User Information -->
                           <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -142,7 +156,7 @@
                                   Activity Log
                               </a>
                               <div class="dropdown-divider"></div>
-                              <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                              <a class="dropdown-item" href="<?php echo base_url('logout') ?>" data-toggle="modal" data-target="#logoutModal">
                                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                   Logout
                               </a>

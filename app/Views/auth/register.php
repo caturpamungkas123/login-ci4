@@ -43,7 +43,7 @@
                         </form>
                         <hr>
                         <div class="text-center">
-                            <a href="<?php echo base_url() ?>/login/login" class="small" href="login.html">Already have an account? Login!</a>
+                            <a href="<?php echo base_url() ?>/login" class="small" href="login.html">Already have an account? Login!</a>
                         </div>
                     </div>
                 </div>
